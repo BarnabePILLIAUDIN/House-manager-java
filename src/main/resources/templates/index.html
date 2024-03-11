@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head.html"></head>
+    <body>
+        <nav th:replace="fragments/nav.html"></nav>
+        <main class="mx-5">
+            <h1 class="text-center font-bold py-2 text-2xl">Welcome to house manager</h1>
+            <div class="gap-5 flex flex-col mx-5 mt-4">
+                <article  th:each="house: ${houses}">
+                    <a th:href="'/'+${house.id}" class="flex items-center gap-5 border rounded-md border-black">
+                        <section>
+                            <img th:alt="${house.title}" th:src="${house.thumbnailUrl}">
+                        </section>
+                        <section class="flex flex-col gap-5">
+                            <h2 class="uppercase text-2xl font-bold" th:text="${house.title}"></h2>
+                            <p class="flex gap-1">
+                                <span th:text="${house.address}"></span>
+                                <span th:text="${house.city}"></span>
+                                <span th:text="${house.zipCode}"></span>
+                            </p>
+                        </section>
+                    </a>
+                </article>
+            </div>
+        </main>
+    </body>
+</html>

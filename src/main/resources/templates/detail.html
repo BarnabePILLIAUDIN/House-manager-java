@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head.html"></head>
+    <body>
+        <header>
+            <nav th:replace="fragments/nav.html"></nav>
+        </header>
+        <main>
+            <div class="w-full flex flex-row gap-10 mx-5">
+                <img th:alt="${house.title}" th:src="${house.thumbnailUrl}" class="rounded-md">
+                <div class="w-full">
+                    <h1 class="text-2xl font-bold text-4xl " th:text="${house.title}"></h1>
+                    <h2 th:text="${house.price} + ' €'" class="text-xl font-semibold mt-3"></h2>
+                    <p class="flex gap-1 text-xl font-semibold">
+                        <span th:text="${house.address}"></span>
+                        <span th:text="${house.city}"></span>
+                        <span th:text="${house.zipCode}"></span>
+                    </p>
+                    <p th:text="${house.description}" class="font-medium mt-5"></p>
+                </div>
+                
+            </div>
+        
+        </main>
+    </body>
+</html>

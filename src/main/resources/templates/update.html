@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head.html"></head>
+    <body>
+        <header>
+            <nav th:replace="fragments/nav.html"></nav>
+        </header>
+        <h1 class="text-center font-bold py-2 text-xl">Update a house</h1>
+        <form action="/save" class="border border-black rounded-md w-96 mx-auto flex flex-col gap-5 py-5 px-3 mt-5"
+              method="post">
+            <input hidden="hidden" name="id" th:value="${house.id}" type="number">
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="title">Title</label>
+                <input class="border border-black rounded-md p-2" name="title"
+                       placeholder="Property advertisement title" th:value="${house.title}" type="text" id="title"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="address">Address</label>
+                <input class="border border-black rounded-md p-2" name="address" placeholder="House's address"
+                       th:value="${house.address}" type="text" id="address"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="zip-code">Zip code</label>
+                <input class="border border-black rounded-md p-2" name="zipCode" placeholder="House's zip code"
+                       th:value="${house.zipCode}" type="text" id="zip-code"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="city">City</label>
+                <input class="border border-black rounded-md p-2" name="city" placeholder="House's city"
+                       th:value="${house.city}" type="text" id="city" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="price">Price</label>
+                <input class="border border-black rounded-md p-2" name="price" placeholder="Price"
+                       th:value="${house.price}" type="number" id="price"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="thumbnail-url">Image URL</label>
+                <input class="border border-black rounded-md p-2" name="thumbnailUrl" placeholder="The url of the image"
+                       th:value="${house.thumbnailUrl}" type="text" id="thumbnail-url"/>
+            </div>
+            <div class="flex flex-col gap-2">
+                <label class="font-semibold" for="description">Description</label>
+                <textarea class="border border-black rounded-md p-2" cols="15" name="description"
+                          placeholder="Your message" th:text="${house.description}" id="description"></textarea>
+            </div>
+            <button class="bg-blue-500 rounded text-white py-2" type="submit">Update</button>
+        </form>
+    </body>
+</html>

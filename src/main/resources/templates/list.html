@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head.html"></head>
+    <body>
+        <header>
+            <nav th:replace="fragments/nav.html"></nav>
+        </header>
+        <main>
+            <h1 class="text-center font-bold py-2 text-xl"> All the houses</h1>
+            <div class="mx-5">
+                <table class="w-full text">
+                    <thead class="bg-slate-500 text-white text-center">
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Address</th>
+                        <th>Zip code</th>
+                        <th>City</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr class="even:bg-slate-200" th:each="house: ${houses}">
+                            <td class="border border-black text-center" th:text="${house.title}"></td>
+                            <td class="border border-black text-center" th:text="${house.description}"></td>
+                            <td class="border border-black text-center" th:text="${house.address}"></td>
+                            <td class="border border-black text-center" th:text="${house.zipCode}"></td>
+                            <td class="border border-black text-center" th:text="${house.city}"></td>
+                            <td class="border border-black text-right pr-2" th:text="${house.price} + ' &#8364; '"></td>
+                            <td class="border border-black text-center"><a th:href="@{'/delete/' + ${house.id}}">🗑️</a>
+                            </td>
+                            <td class="border border-black text-center"><a th:href="@{'/update/' + ${house.id}}">✏️</a>️
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </body>
+</html>

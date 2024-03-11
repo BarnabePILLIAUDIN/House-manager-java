@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head.html"></head>
+    <body>
+        <header>
+            <nav th:replace="fragments/nav.html"></nav>
+        </header>
+        <main>
+            <h1 class="text-center font-bold py-2 text-xl">Add a new House</h1>
+            <form action="/save" class="border border-black rounded-md w-96 mx-auto flex flex-col gap-5 py-5 px-3 mt-5"
+                  method="post">
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="title">Title</label>
+                    <input class="border border-black rounded-md p-2" id="title" name="title"
+                           placeholder="Property advertisement title"
+                           type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="address">Address</label>
+                    <input class="border border-black rounded-md p-2" id="address" name="address"
+                           placeholder="House's address" type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="zip-code">Zip code</label>
+                    <input class="border border-black rounded-md p-2" id="zip-code" name="zipCode"
+                           placeholder="House's zip code" type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="city">City</label>
+                    <input class="border border-black rounded-md p-2" id="city" name="city"
+                           placeholder="House's city" type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="price">Price</label>
+                    <input class="border border-black rounded-md p-2" id="price" name="price"
+                           placeholder="Price" type="number"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="thumbnail-url">Image URL</label>
+                    <input class="border border-black rounded-md p-2" id="thumbnail-url"
+                           name="thumbnailUrl"
+                           placeholder="The url of the image" type="text"/>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-semibold" for="description">Description</label>
+                    <textarea class="border border-black rounded-md p-2" cols="15" name="description"
+                              placeholder="Your message" id="description"></textarea>
+                </div>
+                <button class="bg-blue-500 rounded text-white py-2" type="submit">Add</button>
+            </form>
+        </main>
+    </body>
+</html>
