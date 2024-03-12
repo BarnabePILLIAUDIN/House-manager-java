@@ -7,18 +7,18 @@
         </header>
         <main>
             <div class="w-full flex flex-row gap-10 mx-5">
-                <img th:alt="${house.title}" th:src="${house.thumbnailUrl}" class="rounded-md">
+                <img class="rounded-md" th:alt="${house.title}" th:src="${house.thumbnailUrl}">
                 <div class="w-full">
                     <h1 class="text-2xl font-bold text-4xl " th:text="${house.title}"></h1>
-                    <h2 th:text="${house.price} + ' €'" class="text-xl font-semibold mt-3"></h2>
+                    <h2 class="text-xl font-semibold mt-3" th:text="${house.price} + ' €'"></h2>
                     <p class="flex gap-1 text-xl font-semibold">
                         <span th:text="${house.address}"></span>
                         <span th:text="${house.city}"></span>
                         <span th:text="${house.zipCode}"></span>
                     </p>
-                    <p th:text="${house.description}" class="font-medium mt-5"></p>
+                    <p class="font-medium mt-5" th:text="${house.description}"></p>
                 </div>
-                
+            
             </div>
         
         </main>

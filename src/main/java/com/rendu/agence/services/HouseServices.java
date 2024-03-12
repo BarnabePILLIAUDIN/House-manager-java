@@ -19,18 +19,21 @@ public class HouseServices {
     }
 
     public List<House> findAll() {
-        return repository.findAll();
+        return repository.findByIsActiveTrue();
     }
 
-    public void delete(Integer id){
-        repository.deleteById(id);
-    }
-
-    public House findById(Integer id){
+    public House findById(Integer id) {
         Optional<House> house = repository.findById(id);
 
         // If there is no house with this id we return an empty one
         return house.orElseGet(House::new);
 
+    }
+
+    public void delete(Integer id) {
+        House house = this.findById(id);
+        house.setIsActive(false);
+
+        this.save(house);
     }
 }

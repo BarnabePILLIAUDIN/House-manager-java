@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="houses")
+@Table(name = "houses")
 @AllArgsConstructor
 @NoArgsConstructor
 public class House {
@@ -21,4 +21,5 @@ public class House {
     private String zipCode;
     private String city;
     private Integer price;
+    private Boolean isActive = true;
 }

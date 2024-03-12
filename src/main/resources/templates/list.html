@@ -10,19 +10,20 @@
             <div class="mx-5">
                 <table class="w-full text">
                     <thead class="bg-slate-500 text-white text-center">
-                        <th> Title</th>
-                        <th>Description</th>
+                        <td> Title</td>
                         <th>Address</th>
                         <th>Zip code</th>
                         <th>City</th>
                         <th>Price</th>
                         <th></th>
                         <th></th>
+                        <th>Description</th>
                     </thead>
                     <tbody>
                         <tr class="even:bg-slate-200" th:each="house: ${houses}">
-                            
-                            <td class="border border-black text-center" ><a th:href="'/' +${house.id}" th:text="${house.title}"></a></td>
+                            <td class="border border-black text-center">
+                                <a th:href="'/' +${house.id}" th:text="${house.title}"></a>
+                            </td>
                             <td class="border border-black text-center" th:text="${house.description}"></td>
                             <td class="border border-black text-center" th:text="${house.address}"></td>
                             <td class="border border-black text-center" th:text="${house.zipCode}"></td>
